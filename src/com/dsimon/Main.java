@@ -1,5 +1,6 @@
 package com.dsimon;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -11,9 +12,9 @@ public class Main {
 
         printIntegers(array);
 
-        array = sortIntegers(array);
+        int[] sortedArray = sortIntegers(array);
 
-        printIntegers(array);
+        printIntegers(sortedArray);
     }
 
     public static int[] getIntegers(int arrayLength) {
@@ -34,6 +35,10 @@ public class Main {
 
     public static int[] sortIntegers(int[] array) {
         boolean sorted = false;
+
+        int[] copiedArray = Arrays.copyOf(array, array.length);
+        // Built in method to make a copy of an array!!
+
         while (!sorted) {
             sorted = true;
             for (int i = 0; i < array.length - 1; i++) {
